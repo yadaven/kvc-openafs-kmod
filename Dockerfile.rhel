@@ -1,0 +1,33 @@
+#FROM registry.access.redhat.com/ubi8:latest
+FROM centos:latest
+MAINTAINER "coreos@lists.fedoraproject.org"
+WORKDIR /build/
+
+# First update the base container to latest versions of everything
+RUN yum update -y
+
+# Expecting kmod software version as an input to the build
+ARG KMODVER
+# Grab the software from upstream
+#ADD https://github.com/kmods-via-containers/simple-kmod/archive/${KMODVER}.tar.gz ./file.tar.gz
+RUN yum install -y bzip2
+COPY openafs-1.8.5-src.tar.bz2 /build/
+RUN tar -xjvf ./openafs-1.8.5-src.tar.bz2
+
+# Expecting kernel version as an input to the build
+ARG KVER
+
+# Note, your host must have access to repos where kernel developement
+# packages can be installed. If it doesn't the following steps will
+# fail
+
+# Prep and build the module
+RUN yum install -y make sudo
+RUN yum install -y gcc kernel-{core,devel,modules}-${KVER} elfutils-libelf-devel
+#RUN make buildprep KVER=${KVER} KMODVER=${KMODVER}
+RUN yum install -y libtool which
+RUN yum install -y krb5-devel autoconf flex bison
+RUN cd openafs-1.8.5 && sh regen.sh
+RUN cd openafs-1.8.5 && ./configure --with-afs-sysname=amd64_linux26 --prefix=/usr --libdir=/usr/lib64 --bindir=/usr/bin --sbindir=/usr/sbin --enable-kauth --enable-debug --enable-fuse-client --with-linux-kernel-headers=/lib/modules/${KVER}/build --with-krb5 --enable-redhat-buildsys --enable-kauth --enable-transarc-paths --enable-kernel-module
+RUN cd openafs-1.8.5 && make all 
+RUN cd openafs-1.8.5 && make install
