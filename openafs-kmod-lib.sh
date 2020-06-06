@@ -53,6 +53,7 @@ source "/etc/kvc/${KVC_SOFTWARE_NAME}.conf"
 # kernel version.
 IMAGE="${KVC_SOFTWARE_NAME}-${KMOD_SOFTWARE_VERSION}:${KVC_KVER}"
 
+
 build_kmod_container() {
     echo "Building ${IMAGE} kernel module container..."
     kvc_c_build -t ${IMAGE}                              \
