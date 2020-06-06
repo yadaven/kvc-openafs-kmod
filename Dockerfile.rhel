@@ -12,7 +12,7 @@ ARG KMODVER
 #ADD https://github.com/kmods-via-containers/simple-kmod/archive/${KMODVER}.tar.gz ./file.tar.gz
 RUN yum install -y bzip2
 ADD https://github.com/yadaven/kvc-openafs-kmod/blob/dev/openafs-1.8.5-src.tar.bz2 /build/
-RUN tar -xjvf ./openafs-1.8.5-src.tar.bz2
+RUN tar -xzvf ./openafs-1.8.5-src.tar.bz2
 
 # Expecting kernel version as an input to the build
 ARG KVER
