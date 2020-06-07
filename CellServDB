@@ -1,0 +1,83 @@
+>abs.endicott.ibm.com           #IBM Endicott - last changed 20190307
+9.60.79.139                     #bashful.endicott.ibm.com
+>apd.pok.ibm.com                #IBM Poughkeepsie.
+9.57.253.75                     #apdadb01.pok.ibm.com
+9.57.253.76                     #apdadb02.pok.ibm.com
+9.57.253.77                     #apdadb03.pok.ibm.com
+>austin.ibm.com                 #Austin AFS
+9.5.196.31                      #ausadb05.rchland.ibm.com
+9.5.196.80                      #ausadb06.rchland.ibm.com
+9.5.196.81                      #ausadb07.rchland.ibm.com
+>awd.austin.ibm.com             #Austin (AWD Main Cell)
+9.57.253.118                    #awdadb05.pok.ibm.com
+9.57.253.146                    #awdadb06.pok.ibm.com
+9.57.253.147                    #awdadb07.pok.ibm.com
+>eda.fishkill.ibm.com           #EDA Laboratory, Fishkill
+9.57.253.5                      #edaadb01.pok.ibm.com
+9.57.253.6                      #edaadb02.pok.ibm.com
+9.57.253.51                     #edaadb03.pok.ibm.com
+>fishkill.ibm.com               #Fishkill AFS
+9.57.253.53                     #fshadb05.pok.ibm.com
+9.57.253.54                     #fshadb06.pok.ibm.com
+9.57.253.56                     #fshadb04.pok.ibm.com
+>haifa.ibm.com                  #IBM Haifa Research Center
+9.148.5.77                      #yarden.haifa.ibm.com
+9.148.5.232                     #rs340c.haifa.ibm.com
+9.148.5.238                     #rs340a.haifa.ibm.com
+>mfg.bromont.ibm.com            #Bromont Manufacturing Cell
+9.54.4.128                      #afs1.bromont.ibm.com
+9.54.4.129                      #afs2.bromont.ibm.com
+9.54.4.130                      #afs3.bromont.ibm.com
+>pgzafs.ibm.com                 #Cell name
+9.56.200.171                    #pgzadb01.iespc.ibm.com
+9.56.200.172                    #pgzadb02.iespc.ibm.com
+9.56.200.173                    #pgzadb03.iespc.ibm.com
+>profit.pok.ibm.com             #Profit AFS Cell
+9.57.253.79                     #proadb01.pok.ibm.com
+9.57.253.80                     #proadb02.pok.ibm.com
+9.57.253.81                     #proadb03.pok.ibm.com
+>pune.in.ibm.com                #Pune, India AFS Cell
+9.182.193.71                    #acquarius.in.ibm.com
+9.182.193.77                    #garfield.in.ibm.com
+9.182.193.87                    #snoopy.in.ibm.com
+>raleigh.ibm.com                #Raleigh AFS
+9.57.253.133                    #raladb05.pok.ibm.com   
+9.57.253.136                    #raladb06.pok.ibm.com   
+9.57.253.137                    #raladb07.pok.ibm.com
+>rcheng.ibm.com                 #Rochester Engineering
+9.5.196.11                      #engadb05.rchland.ibm.com
+9.5.196.12                      #engadb06.rchland.ibm.com
+9.5.196.13                      #engadb07.rchland.ibm.com
+>rchland.ibm.com                #Rochester AFS
+9.5.196.7                       #rchadb05.rchland.ibm.com
+9.5.196.8                       #rchadb06.rchland.ibm.com
+9.5.196.9                       #rchadb07.rchland.ibm.com
+>rchtst.rchland.ibm.com         #Rochester Test AFS
+9.10.228.18                     #rchtst01.rchland.ibm.com
+9.10.228.22                     #rchtst02.rchland.ibm.com
+9.10.228.23                     #rchtst03.rchland.ibm.com
+>sl1.isl.edst.ibm.com           #EDA v1 SoftLayer Cloud AFS Cell
+9.51.154.22                     #afsdb1.lex.dst.ibm.com
+9.51.168.75                     #afsdata2.lex.dst.ibm.com
+>stllp.sanjose.ibm.com          #STL Site AFS Cell
+9.30.4.21                       #afsdb1.svl.ibm.com
+9.30.4.22                       #afsdb2.svl.ibm.com
+9.30.4.23                       #afsdb3.svl.ibm.com
+>transarc.com                   #Transarc Corporation
+9.5.196.15                      #trnadb04.rchland.ibm.com
+9.5.196.16                      #trnadb05.rchland.ibm.com
+9.5.196.17                      #trnadb06.rchland.ibm.com
+>tucson.ibm.com                 #tucson.ibm.com 
+9.11.105.128                    #tucadb01.tucson.ibm.com 
+9.11.105.129                    #tucadb02.tucson.ibm.com 
+9.11.105.154                    #tucadb03.tucson.ibm.com 
+>vlsilab.boeblingen.ibm.com     #Boeblingen VLSI Development Lab
+9.152.74.100                    #juliett.boeblingen.de.ibm.com
+9.152.74.101                    #hda001.boeblingen.de.ibm.com
+9.152.74.102                    #hda002.boeblingen.de.ibm.com
+9.152.74.103                    #foxtrott.boeblingen.de.ibm.com
+9.152.74.104                    #fs04.boeblingen.de.ibm.com
+>zurich.ibm.com                 #IBM Zurich Research Laboratory
+9.4.2.232                       #aare.zurich.ibm.com
+9.4.4.229                       #inn.zurich.ibm.com
+9.4.4.230                       #toess.zurich.ibm.com

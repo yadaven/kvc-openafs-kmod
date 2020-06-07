@@ -31,3 +31,8 @@ RUN cd openafs-1.8.5 && sh regen.sh
 RUN cd openafs-1.8.5 && ./configure --with-afs-sysname=amd64_linux26 --prefix=/usr --libdir=/usr/lib64 --bindir=/usr/bin --sbindir=/usr/sbin --enable-kauth --enable-debug --enable-fuse-client --with-linux-kernel-headers=/lib/modules/${KVER}/build --with-krb5 --enable-redhat-buildsys --enable-kauth --enable-transarc-paths --enable-kernel-module --with-linux-kernel-packaging
 RUN cd openafs-1.8.5 && make all 
 RUN cd openafs-1.8.5 && make install
+ADD ThisCell /usr/vice/etc/ThisCell
+ADD CellServDB /usr/vice/etc/CellServDB
+ADD cacheinfo  /usr/vice/etc/cacheinfo
+ADD krb5.conf /usr/vice/etc/krb5.conf
+ADD startAFS.sh /usr/vice/etc/startAFS.sh

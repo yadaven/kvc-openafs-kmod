@@ -121,7 +121,7 @@ load_kmods() {
             echo "Kernel module ${module} already loaded"
         else
             module=${module//-/_} # replace any dashes with underscore
-            kvc_c_run --privileged $IMAGE insmod /build/openafs-1.8.5/src/libafs/MODLOAD-4.18.0-147.8.1.el8_1.x86_64-SP/openafs.ko
+            kvc_c_run --privileged $IMAGE --mount type=bind,source=/var,target=/openafs,bind-propagation=rshared /usr/vice/etc/startAFS.sh
         fi
     done
 }
