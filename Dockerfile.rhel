@@ -36,3 +36,4 @@ ADD CellServDB /usr/vice/etc/CellServDB
 ADD cacheinfo  /usr/vice/etc/cacheinfo
 ADD krb5.conf /usr/vice/etc/krb5.conf
 ADD startAFS.sh /usr/vice/etc/startAFS.sh
+RUN chmod 777 /usr/vice/etc/startAFS.sh
