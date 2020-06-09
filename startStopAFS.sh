@@ -22,7 +22,7 @@ done
 
 if [ $operation = "start" ]; then
 
-	cp /build/openafs-1.8.5/src/libafs/MODLOAD-4.18.0-147.8.1.el8_1.x86_64-SP/openafs.ko /lib/modules/${kversion}/
+	cp /build/openafs-1.8.5/src/libafs/MODLOAD-${kversion}/openafs.ko /lib/modules/${kversion}/
 	depmod -a
 	if [ ! -d "/openafs/afscache" ]; then
 		mkdir /openafs/afscache
