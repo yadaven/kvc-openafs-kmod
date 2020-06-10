@@ -22,6 +22,9 @@ done
 
 if [ $operation = "start" ]; then
 
+	cp /openafs/ThisCell /usr/vice/etc/
+	cp /openafs/CellServDB /usr/vice/etc/
+	cp /openafs/krb5.conf /etc
 	cp /build/openafs-1.8.5/src/libafs/MODLOAD-${kversion}/openafs.ko /lib/modules/${kversion}/
 	depmod -a
 	if [ ! -d "/openafs/afscache" ]; then
