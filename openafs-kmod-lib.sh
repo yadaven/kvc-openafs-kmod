@@ -99,7 +99,7 @@ load_kmods() {
             echo "Kernel module ${module} already loaded"
         else
             module=${module//-/_} # replace any dashes with underscore
-            kvc_c_run --mount type=bind,source=/var,target=/openafs,bind-propagation=rshared  --privileged $IMAGE /usr/vice/etc/startStopAFS.sh -o start -v ${KVC_KVER}
+            kvc_c_run --mount type=bind,source=/var,target=/openafs,bind-propagation=rshared  --privileged $IMAGE /usr/vice/etc/startStopAFS.sh -o start -s ${KMOD_SOFTWARE_VERSION} -v ${KVC_KVER}
         fi
     done
 }
@@ -109,7 +109,7 @@ unload_kmods() {
     for module in ${KMOD_NAMES}; do
         if is_kmod_loaded ${module}; then
             module=${module//-/_} # replace any dashes with underscore
-	    kvc_c_run --mount type=bind,source=/var,target=/openafs,bind-propagation=rshared  --privileged $IMAGE /usr/vice/etc/startStopAFS.sh -o stop -v ${KVC_KVER} 
+	    kvc_c_run --mount type=bind,source=/var,target=/openafs,bind-propagation=rshared  --privileged $IMAGE /usr/vice/etc/startStopAFS.sh -o stop -s ${KMOD_SOFTWARE_VERSION} -v ${KVC_KVER} 
         else
             echo "Kernel module ${module} already unloaded"
         fi
