@@ -28,7 +28,8 @@ if [ $operation = "start" ]; then
 	cp /openafs/ThisCell /usr/vice/etc/
 	cp /openafs/CellServDB /usr/vice/etc/
 	cp /openafs/krb5.conf /etc
-	cp /build/openafs-${softwareVersion}/src/libafs/MODLOAD-${kversion}/openafs.ko /lib/modules/${kversion}/
+	koloc=$(find /build -name openafs.ko)
+	cp ${koloc} /lib/modules/${kversion}/
 	depmod -a
 	if [ ! -d "/openafs/afscache" ]; then
 		mkdir /openafs/afscache
