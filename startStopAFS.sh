@@ -38,7 +38,7 @@ if [ $operation = "start" ]; then
 		mkdir /openafs/afs
 	fi
 	modprobe openafs
-	/build/openafs-${softwareVersion}/src/afsd/afsd -stat 100000 -daemons 12 -volumes 1536 -chunksize 20 -files 115000 -dcache 25000 -disable-dynamic-vcaches --mountdir=/openafs/afs
+	/build/openafs-${softwareVersion}/src/afsd/afsd -stat 100000 -daemons 12 -volumes 1536 -chunksize 20 -files 115000 -dcache 25000 -disable-dynamic-vcaches -mountdir /openafs/afs
 elif [ $operation = "stop" ]; then
 	umount /openafs/afs
 	/build/openafs-${softwareVersion}/src/afsd/afsd -shutdown

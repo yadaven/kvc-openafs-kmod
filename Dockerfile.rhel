@@ -1,5 +1,5 @@
-#FROM registry.access.redhat.com/ubi8:latest
-FROM centos:latest
+FROM registry.access.redhat.com/ubi8:latest
+#FROM centos:latest
 MAINTAINER "coreos@lists.fedoraproject.org"
 WORKDIR /build/
 
@@ -11,8 +11,8 @@ ARG KMODVER
 # Grab the software from upstream
 #ADD https://github.com/kmods-via-containers/simple-kmod/archive/${KMODVER}.tar.gz ./file.tar.gz
 RUN yum install -y bzip2
-ADD https://github.com/yadaven/kvc-openafs-kmod/raw/master/openafs-1.8.5.tar.gz  /build/
-RUN tar -xvzf ./openafs-1.8.5.tar.gz
+ADD https://github.com/yadaven/kvc-openafs-kmod/raw/master/openafs-${KMODVER}.tar.gz  /build/
+RUN tar -xvzf ./openafs-${KMODVER}.tar.gz
 
 # Expecting kernel version as an input to the build
 ARG KVER
