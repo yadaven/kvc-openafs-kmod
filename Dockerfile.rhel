@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi7:latest
+FROM registry.access.redhat.com/ubi8:latest
 #FROM centos:latest
 MAINTAINER "coreos@lists.fedoraproject.org"
 WORKDIR /build/
