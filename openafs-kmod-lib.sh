@@ -51,7 +51,7 @@ source "/etc/kvc/${KVC_SOFTWARE_NAME}.conf"
 # The name of the container image to consider. It will be a unique
 # combination of the module software name/version and the targeted
 # kernel version.
-IMAGE="${KVC_SOFTWARE_NAME}-${KMOD_SOFTWARE_VERSION}:${KVC_KVER}"
+IMAGE="${KVC_SOFTWARE_NAME}:${KVC_KVER}"
 
 
 build_kmod_container() {
@@ -60,7 +60,6 @@ build_kmod_container() {
         --file ${KMOD_CONTAINER_BUILD_FILE}          \
         --label="name=${KVC_SOFTWARE_NAME}"          \
         --build-arg KVER=${KVC_KVER}                 \
-        --build-arg KMODVER=${KMOD_SOFTWARE_VERSION} \
         ${KMOD_CONTAINER_BUILD_CONTEXT}
 
     # get rid of any dangling containers if they exist
@@ -99,7 +98,7 @@ load_kmods() {
             echo "Kernel module ${module} already loaded"
         else
             module=${module//-/_} # replace any dashes with underscore
-            kvc_c_run --mount type=bind,source=/var,target=/openafs,bind-propagation=rshared  --privileged $IMAGE /usr/vice/etc/startStopAFS.sh -o start -s ${KMOD_SOFTWARE_VERSION} -v ${KVC_KVER}
+            kvc_c_run --mount type=bind,source=/var,target=/openafs,bind-propagation=rshared  --privileged $IMAGE /usr/vice/etc/startStopAFS.sh -o start -v ${KVC_KVER}
         fi
     done
 }
@@ -109,7 +108,7 @@ unload_kmods() {
     for module in ${KMOD_NAMES}; do
         if is_kmod_loaded ${module}; then
             module=${module//-/_} # replace any dashes with underscore
-	    kvc_c_run --mount type=bind,source=/var,target=/openafs,bind-propagation=rshared  --privileged $IMAGE /usr/vice/etc/startStopAFS.sh -o stop -s ${KMOD_SOFTWARE_VERSION} -v ${KVC_KVER} 
+	    kvc_c_run --mount type=bind,source=/var,target=/openafs,bind-propagation=rshared  --privileged $IMAGE /usr/vice/etc/startStopAFS.sh -o stop -v ${KVC_KVER} 
         else
             echo "Kernel module ${module} already unloaded"
         fi

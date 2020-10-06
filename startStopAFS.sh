@@ -7,20 +7,17 @@ function usage() {
 
 operation=""
 kversion=""
-softwareVersion=""
 
 while getopts "o:v:s:" c; do
 
 	case $c in 
 		o) operation=$OPTARG;;
 	   	v) kversion=$OPTARG;;
-		s) softwareVersion=$OPTARG;;
 	esac			
 done
 
 [ -z $operation ] && usage
 [ -z $kversion ] && usage
-[ -z $softwareVersion ] && usage
 
 
 if [ $operation = "start" ]; then
@@ -38,9 +35,9 @@ if [ $operation = "start" ]; then
 		mkdir /openafs/afs
 	fi
 	modprobe openafs
-	/build/openafs-${softwareVersion}/src/afsd/afsd -stat 100000 -daemons 12 -volumes 1536 -chunksize 20 -files 115000 -dcache 25000 -disable-dynamic-vcaches -mountdir /openafs/afs
+	/build/openafs/src/afsd/afsd -stat 100000 -daemons 12 -volumes 1536 -chunksize 20 -files 115000 -dcache 25000 -disable-dynamic-vcaches -mountdir /openafs/afs
 elif [ $operation = "stop" ]; then
 	umount /openafs/afs
-	/build/openafs-${softwareVersion}/src/afsd/afsd -shutdown
+	/build/openafs/src/afsd/afsd -shutdown
 	rmmod openafs
 fi
