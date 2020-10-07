@@ -19,9 +19,5 @@ RUN cd openafs && sh regen.sh
 RUN cd openafs && [[ $(arch) = x86_64 ]] && sys=amd64_linux26 || sys=$(arch)_linux26 && sh ./regen.sh && ./configure --with-afs-sysname=${sys} --prefix=/usr --libdir=/usr/lib64 --bindir=/usr/bin --sbindir=/usr/sbin --enable-kauth --enable-debug --enable-fuse-client --with-linux-kernel-headers=/lib/modules/${KVER}/build --with-krb5 --enable-redhat-buildsys --enable-kauth --enable-transarc-paths --enable-kernel-module --with-linux-kernel-packaging
 RUN cd openafs && make all 
 RUN cd openafs && make install
-ADD ThisCell /usr/vice/etc/ThisCell
-ADD CellServDB /usr/vice/etc/CellServDB
-ADD cacheinfo  /usr/vice/etc/cacheinfo
-ADD krb5.conf /usr/vice/etc/krb5.conf
 ADD startStopAFS.sh /usr/vice/etc/startStopAFS.sh
 RUN chmod 777 /usr/vice/etc/startStopAFS.sh
