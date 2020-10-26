@@ -98,7 +98,7 @@ load_kmods() {
             echo "Kernel module ${module} already loaded"
         else
             module=${module//-/_} # replace any dashes with underscore
-            kvc_c_run --mount type=bind,source=/var,target=/openafs,bind-propagation=rshared  --privileged $IMAGE /usr/vice/etc/startStopAFS.sh -o start -v ${KVC_KVER}
+            kvc_c_run -d --mount type=bind,source=/var,target=/openafs,bind-propagation=rshared  --privileged $IMAGE /usr/vice/etc/startStopAFS.sh -o start -v ${KVC_KVER}
         fi
     done
 }
