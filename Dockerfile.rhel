@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8:latest
 MAINTAINER "Yadavendra Yadav"
 WORKDIR /build/
-RUN subscription-manager register --username ${SUBS_USER} --password ${SUBS_PASS} --auto-attach
+#RUN subscription-manager register --username ${SUBS_USER} --password ${SUBS_PASS} --auto-attach
 # First update the base container to latest versions of everything
 RUN yum update -y
 
